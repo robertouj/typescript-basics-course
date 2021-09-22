@@ -5,13 +5,20 @@
 - Less error code
 - Cleaner code
 
-## What is TypeScript
+## What is TypeScript?
 
 - Is a superset of JavaScript. A language building up on JavaScript
 - Add new features and advantages to JavaScript
 - Browser can't execute TypeScript. It's also a compiler which run over your code to compile TypeScript to JavaScript.
 - It is possible to write easier code that compiles to a more complex JavaScript snippets.
 - Permit to identify errors in code before it runs with extra error checking.
+- TypeScript add:
+  - Types
+  - Non-JavaScript features like Interfaces, Generics
+  - Rich configuration options
+  - Next-gen JS features compiled down for old browsers
+  - Meta-Programming features like Decorators
+  - Tools that helps even in non TypeScript projects
 
 ## Installing TypeScript
 
@@ -21,10 +28,36 @@ npm install -g typescript
 
 ## Compiling ts files
 
-It is possible to compile the ts files and get the error messages from the console.
+It is possible to compile the ts files and get the error messages from the console. It creates a .js file with the result of the compilation.
 
 ```console
 tsc my-ts-script.ts
+```
+
+## Creating package.json
+
+It creates the package.json configuration file.
+
+```console
+npm init
+```
+
+After that it is possible to install all the necessary packages described in the file with the command:
+
+```console
+npm install
+```
+
+Also it can install a new npm package adding the name
+
+```console
+npm install your-npm-package
+```
+
+Another variant install development dependencies
+
+```console
+npm install --save-dev your-dev-package
 ```
 
 ## Basic syntax
@@ -55,3 +88,15 @@ console.log(typeof +x === 'number'); // expected output: true
 ```
 
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus>
+
+- HTML5: script defer attribute
+
+This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
+
+```html
+<script src="app.js" defer></script>
+```
+
+- lite-server
+
+Node application that creates a server running an index.html in the base of the project.
