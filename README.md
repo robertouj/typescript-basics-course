@@ -7,18 +7,23 @@
 
 ## What is TypeScript?
 
-- Is a superset of JavaScript. A language building up on JavaScript
+- Is a superset of JavaScript. A language building up on JavaScript.
 - Add new features and advantages to JavaScript
 - Browser can't execute TypeScript. It's also a compiler which run over your code to compile TypeScript to JavaScript.
 - It is possible to write easier code that compiles to a more complex JavaScript snippets.
 - Permit to identify errors in code before it runs with extra error checking.
 - TypeScript add:
   - Types
-  - Non-JavaScript features like Interfaces, Generics
-  - Rich configuration options
-  - Next-gen JS features compiled down for old browsers
-  - Meta-Programming features like Decorators
-  - Tools that helps even in non TypeScript projects
+  - Non-JavaScript features like Interfaces, Generics.
+  - Rich configuration options.
+  - Next-gen JS features compiled down for old browsers.
+  - Meta-Programming features like Decorators.
+  - Tools that helps even in non TypeScript projects.
+- TypeScript helps only during development, before the code get's compiled. It doesn't run in execution time.
+
+## Some difference between JavaScript and TypeScript
+
+- JavaScript uses dynamic types resolved at runtime, TypeScript uses static types setted during development.
 
 ## Installing TypeScript
 
@@ -34,7 +39,7 @@ It is possible to compile the ts files and get the error messages from the conso
 tsc my-ts-script.ts
 ```
 
-## Creating package.json
+## Creating Node environment with package.json
 
 It creates the package.json configuration file.
 
@@ -50,6 +55,8 @@ npm install
 
 Also it can install a new npm package adding the name
 
+## Install node packages
+
 ```console
 npm install your-npm-package
 ```
@@ -58,6 +65,14 @@ Another variant install development dependencies
 
 ```console
 npm install --save-dev your-dev-package
+```
+
+## Executing the app
+
+Install lite-server and add a script in the package.json file to start with the server. It runs an index.html file in the root of the project.
+
+```json
+"start": "lite-server"
 ```
 
 ## Basic syntax
@@ -99,4 +114,10 @@ This Boolean attribute is set to indicate to a browser that the script is meant 
 
 - lite-server
 
-Node application that creates a server running an index.html in the base of the project.
+Node application that creates a server running an index.html in the base of the project. It updates automatically the changes in the code when it's saved.
+
+Then the start script can be created to execute the server.
+
+```json
+"start": "lite-server"
+```

@@ -4,6 +4,7 @@
 
 # skipping js files for this TypeScript project
 *.js
+README.md
 
 ### Node ###
 # Logs
