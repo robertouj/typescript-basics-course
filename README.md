@@ -75,6 +75,52 @@ Install lite-server and add a script in the package.json file to start with the 
 "start": "lite-server"
 ```
 
+## Object Types
+
+As we’ve seen, they can be anonymous:
+
+```js
+function greet(person: { name: string, age: number }) {
+  return "Hello " + person.name;
+}
+```
+
+or they can be named by using either an interface
+
+```js
+interface Person {
+  name: string;
+  age: number;
+}
+
+function greet(person: Person) {
+  return "Hello " + person.name;
+}
+```
+
+or a type alias.
+
+```js
+type Person = {
+  name: string,
+  age: number,
+};
+
+function greet(person: Person) {
+  return "Hello " + person.name;
+}
+```
+
+ref: <https://www.typescriptlang.org/docs/handbook/2/objects.html>
+
+### Tuple Types
+
+A tuple type is another sort of Array type that knows exactly how many elements it contains, and exactly which types it contains at specific positions.
+
+```js
+type StringNumberPair = [string, number];
+```
+
 ## Basic syntax
 
 - Non-null Assertion Operator (Postfix !)
@@ -97,9 +143,9 @@ function liveDangerously(x?: number | null) {
 Writing + before a variable, convert it into a number.
 
 ```js
-const x = '1';
+const x = "1";
 
-console.log(typeof +x === 'number'); // expected output: true
+console.log(typeof +x === "number"); // expected output: true
 ```
 
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Unary_plus>
@@ -120,4 +166,26 @@ Then the start script can be created to execute the server.
 
 ```json
 "start": "lite-server"
+```
+
+- object assignment
+
+This is one kind of the assignment.
+
+```js
+const Role = {};
+
+Role["Admin"] = 1;
+```
+
+- Passing values to anonymous functions
+
+It is possible to pass values with a second parenthesis.
+
+```js
+const Role = {};
+
+(function (myVar) {
+    myVar["ADMIN"] = 0;
+})(Role)
 ```
