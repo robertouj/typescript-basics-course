@@ -136,6 +136,29 @@ function liveDangerously(x?: number | null) {
 
 <https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix->
 
+## Watch Node
+
+Compiling ts files with the watch option, the file is compile automatically when the ts file is saved.
+
+```console
+tsc app.ts --watch
+tsc app.ts -w
+```
+
+## Initiating a TypeScript project
+
+With the next command the tsconfig.json file is created to configure the ts project.
+
+```console
+tsc --init
+```
+
+After that is possible to compile all js files in the whole project with the tsc command and only whatch the files.
+
+```console
+tsc -w
+```
+
 ## Another concepts learned
 
 - Unary plus (+)
