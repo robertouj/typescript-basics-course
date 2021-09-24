@@ -33,7 +33,7 @@ if (person.role === Role.ADMIN) {
 //   name: string;
 //   age: number;
 //   hobbies: string[];
-//   role: [number, string] // this is a Tuple: fixed-length and types array
+//   role: [number, string]; // this is a Tuple: fixed-length and types array
 // } = {
 //   name: 'Maximilian',
 //   age: 30,
