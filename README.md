@@ -159,6 +159,29 @@ After that is possible to compile all js files in the whole project with the tsc
 tsc -w
 ```
 
+## TypeScript configurations
+
+Some configurations about the tsconfig.json file.
+
+- target
+
+Set the JavaScript language version for emitted JavaScript and include compatible library declarations.
+
+e.g. "ES5", "ES6", "ES2015", "ES2016", ...
+
+- lib
+
+Can add the common libraries to the project, instead add all the js libraries.
+
+```json
+"lib": [
+      "DOM",
+      "es6",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
+```
+
 ## Another concepts learned
 
 - Unary plus (+)
@@ -209,6 +232,6 @@ It is possible to pass values with a second parenthesis.
 const Role = {};
 
 (function (myVar) {
-    myVar["ADMIN"] = 0;
-})(Role)
+  myVar["ADMIN"] = 0;
+})(Role);
 ```
