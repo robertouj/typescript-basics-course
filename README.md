@@ -182,6 +182,55 @@ Can add the common libraries to the project, instead add all the js libraries.
     ]
 ```
 
+- exclude/include
+
+```json
+"include": [
+    "src/app.ts",
+    "src/analytics.ts"
+  ],
+  "exclude": [
+    "node_modules", // would be the default
+  ]
+```
+
+- sourceMap
+
+Generate the corresponding .map file to link directly the compiled .js with the .ts original file. Usefull to debugging.
+
+- output/input directories
+
+```json
+"outDir": "./dist",
+"rootDir": "./src",
+```
+
+- remove comments
+
+Don't create the comments in the output js files.
+
+- no emit (noEmit)
+
+To don't emit the output js files, usefull tu check the syntax without compile.
+
+- no emit on error (noEmitOnError)
+
+Prevent to emit compiled ts files with errors.
+
+- strict
+
+Control many strict options to be more precise with the code.
+
+## Organising folders
+
+- src
+
+ Has the job to holding all the input, so all the source TypeScript files.
+
+- dist
+
+Has the job to holding all the output, so all the JavaScript files.
+
 ## Another concepts learned
 
 - Unary plus (+)
@@ -234,4 +283,12 @@ const Role = {};
 (function (myVar) {
   myVar["ADMIN"] = 0;
 })(Role);
+```
+
+- Function.prototype.bind()
+
+The bind() method creates a new function that, when called, has its "this" keyword set to the provided value, with a given sequence of arguments corresponding to the function arguments.
+
+```js
+fn.bind( thisValue [, arg1 [, arg2 [, ... ] ] ] );
 ```
