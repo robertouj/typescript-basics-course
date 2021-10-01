@@ -5,7 +5,7 @@
  * - with interfaces with "extends"
  */
 
-type Admin = {
+ type Admin = {
   name: string;
   privilieges: string[];
 };
@@ -36,3 +36,9 @@ const e1: ElevatedEmployee = {
   startDate: new Date()
 }
 console.log(e1);
+
+// also is possible to combine union types resulting the combination
+type Combinable = string | number;
+type Numeric = number | boolean;
+
+type Universal = Combinable & Numeric; // type: string | number | boolean

@@ -225,11 +225,117 @@ Control many strict options to be more precise with the code.
 
 - src
 
- Has the job to holding all the input, so all the source TypeScript files.
+Has the job to holding all the input, so all the source TypeScript files.
 
 - dist
 
 Has the job to holding all the output, so all the JavaScript files.
+
+## Classes in TypeScript
+
+- shortcut to create a propertie
+
+```typescript
+// normal method
+public name: string;
+
+constructor(name) {
+  this.name = name;
+}
+// shortcut method
+constructor(public name: string) {  
+}
+```
+
+### Visibility of Methods/Properties
+
+- public: accesible in all context.
+- protected: accesible iside the class or extended classes.
+- private: accesible only inside the class.
+- static: accesible without the need to instantiate an object.
+
+### Abstract classes
+
+This kind of classes define abstract methods that are inherited and need to be implemented in the extended classes. Also this classes can't be instantiated.
+
+```typescript
+abstract class Department {
+  // constructor and so on ...
+  abstract describe(this: Department): void;
+}
+
+class ITDepartment extends Department {
+  describe() {
+    /// code ...
+  }
+}
+```
+
+### Singleton pattern
+
+With this pattern is possible to create a Class that it can instantiate only one object of this type.
+
+```typescript
+class SingletonClass {
+  private static instance: SingletonClass;
+
+  private constructor() {
+  }
+
+  static getInstance() {
+    if (SingletonClass.instance) {
+      return this.instance;
+    }
+    this.instance = new SingletonClass();
+    return this.instance;
+  }
+}
+
+const accounting = SingletonClass.getInstance();
+```
+
+### Difference between Interface and Type
+
+- One interface can be only used to describe the structure of an object and is the clearer form to do it.
+- An interface can be implemented by a class as a contract a class then has to adhere to.
+- A Type can also use the union Types and other functionalities.
+
+### Defining a fucntion with an interface
+
+It is possible by defining it with the special syntas as an anonymous function.
+
+```typescript
+interface AddFn {
+  (a: number, b: number): number;
+}
+
+ledd add: AddFn;
+
+add = (n1: number, n2: number) => {
+  return n1 + n2;
+}
+```
+
+### Defining an optional property
+
+It is possible to define a property that could be used or not.
+
+```typescript
+interface Named {
+  readonly name?: string;
+  outputName?: string;
+}
+
+class Person implements Named {
+  name?: string;
+
+  constructor(n?: string) {
+    if (n) {
+      this.name = n;
+    }
+  }
+}
+```
 
 ## Another concepts learned
 
